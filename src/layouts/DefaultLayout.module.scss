@@ -1,0 +1,17 @@
+@use '../scss' as *;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: var(--header-height);
+  padding: 0 16px;
+
+  @include mobile {
+    margin-top: var(--header-height-mobile);
+  }
+}
+
+.content {
+  flex-grow: 1;
+}

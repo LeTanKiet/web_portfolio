@@ -1,0 +1,152 @@
+.carousel {
+  .heading {
+    padding: 16px 0;
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  .swiper_container {
+    height: 420px;
+    margin: 20px 0;
+  }
+  .slide-image:hover {
+    transform: scale(1.02);
+    transition: all 0.3s;
+  }
+  .swiper-slide {
+    width: 370px;
+    height: 420px;
+  }
+  .arrow-icon {
+    height: 100%;
+    width: 100%;
+    stroke: #fff;
+    filter: invert(100%) sepia(5%) saturate(655%) hue-rotate(237deg) brightness(119%) contrast(100%);
+  }
+  .slider-arrow {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider-arrow:hover {
+    transform: scale(1.2);
+    transition: all 0.3s;
+    background-color: rgb(255, 255, 255, 0.3);
+    border-radius: 50%;
+  }
+  @media (max-width: 500px) {
+    .swiper_container {
+      height: 470px;
+    }
+    .swiper-slide {
+      width: 280px !important;
+      height: 360px !important;
+    }
+    .swiper-slide img {
+      width: 280px !important;
+      height: 360px !important;
+    }
+  }
+
+  .swiper-slide img {
+    width: 370px;
+    height: 420px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    display: none;
+  }
+
+  .slider-controler {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+  }
+
+  .slider-controler .slider-arrow::after {
+    content: '';
+  }
+
+  .swiper-pagination .swiper-pagination-bullet {
+    filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+  }
+
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background: var(--primary);
+  }
+
+  .modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  }
+  /* Modal Content (image) */
+  .modal-content {
+    margin: 160px auto;
+    display: block;
+    width: 35%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  /* Add Animation */
+  .modal-content,
+  #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(0);
+    }
+    to {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

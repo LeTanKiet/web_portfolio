@@ -1,0 +1,26 @@
+.story-header {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+}
+
+.story-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.story-see-more {
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: #333;
+  }
+}

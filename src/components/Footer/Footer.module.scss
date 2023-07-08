@@ -1,0 +1,65 @@
+@use '../../scss' as *;
+
+.footer {
+  background-color: #e5e5e5;
+  margin: 0 -16px;
+}
+
+.footer-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 24px;
+}
+
+.navigation-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-between;
+
+  @include mobile {
+    gap: 24px;
+  }
+}
+
+.navigation-item-link {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+
+  &:hover {
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include mobile {
+    gap: 24px;
+  }
+}
+
+.contact-label {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.contact-description {
+  font-size: 1rem;
+}
+
+.footer-icon-list {
+  @include mobile {
+    display: none;
+  }
+}

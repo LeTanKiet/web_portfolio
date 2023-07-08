@@ -1,0 +1,16 @@
+.social-icon-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-icon-item {
+  width: 24px !important;
+  height: 24px !important;
+
+  &:hover {
+    opacity: 0.6;
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+  }
+}

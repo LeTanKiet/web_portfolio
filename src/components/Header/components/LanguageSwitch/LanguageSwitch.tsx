@@ -10,9 +10,8 @@ const cx = classNames.bind(styles);
 function LanguageSwitch() {
   const { t } = useTranslation();
   const [language, setLanguage] = useState(() => {
-    const currentLanguage = JSON.parse(
-      localStorage.getItem('language') || 'en'
-    );
+    const currentLanguage = localStorage.getItem('language') || 'en';
+
     i18n.changeLanguage(currentLanguage);
     return currentLanguage;
   });
@@ -32,7 +31,7 @@ function LanguageSwitch() {
           onClick={() => {
             i18n.changeLanguage('vi');
             setLanguage('vi');
-            localStorage.setItem('language', JSON.stringify('vi'));
+            localStorage.setItem('language', 'vi');
           }}
         >
           <span
@@ -46,7 +45,7 @@ function LanguageSwitch() {
           onClick={() => {
             i18n.changeLanguage('en');
             setLanguage('en');
-            localStorage.setItem('language', JSON.stringify('en'));
+            localStorage.setItem('language', 'en');
           }}
         >
           <span

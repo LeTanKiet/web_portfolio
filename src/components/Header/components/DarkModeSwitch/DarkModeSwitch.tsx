@@ -14,7 +14,6 @@ function DarkModeSwitch({ id }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isChecked, setIsChecked] = useState(() => {
     const darkMode = JSON.parse(localStorage.getItem('dark-mode') || 'false');
-    console.log(darkMode);
     return darkMode;
   });
 

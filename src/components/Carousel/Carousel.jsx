@@ -47,7 +47,7 @@ function Carousel(props) {
             <img src={image} alt="slide_image" className="slide-image" onClick={() => handleImageClick(image)}/>
           </SwiperSlide>
         ))}
-        <div className="slider-controler">
+        <div className="slider-controller">
           <div className="swiper-button-prev slider-arrow">
             <img src={arrow_left} alt="arrow-left" className="arrow-icon" />
           </div>

@@ -30,6 +30,14 @@
   bottom: 120px;
   padding: 12px 20px;
   font-size: 1.2rem;
+  background-color: #4b5a65;
+  color: #fff;
+
+  &:hover {
+    background-color: #4b5a65;
+    color: #fff;
+    opacity: 0.8;
+  }
 
   @include mobile {
     left: 40px;

@@ -8,7 +8,9 @@ function HeroSection() {
   return (
     <section className={`section ${cx('hero-section')}`}>
       <h3 className={cx('slogan')}>Excellence in every pixels.</h3>
-      <button className={`btn btn--rounded ${cx('hero-section-button')}`}>Our works</button>
+      <button className={`btn btn--rounded ${cx('hero-section-button')}`}>
+        Our works
+      </button>
     </section>
   );
 }

@@ -69,18 +69,31 @@ body a {
   }
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin-top: var(--header-height);
-  padding: 0 16px;
+/* --Dark Mode-- */
+.dark {
+  background-color: #36454f;
 
-  @include mobile {
-    margin-top: var(--header-height-mobile);
+  & body,
+  & header,
+  & .dropdown-menu {
+    background-color: #36454f;
   }
-}
 
-.content {
-  flex-grow: 1;
+  & footer,
+  & .dropdown-item:hover {
+    background-color: #4b5a65;
+  }
+
+  & a,
+  & h1,
+  & p,
+  & span,
+  & label,
+  & div {
+    color: white !important;
+  }
+
+  & svg path {
+    fill: white;
+  }
 }

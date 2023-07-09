@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useRef, useState } from 'react';
 import className from 'classnames/bind';
 import styles from './Header.module.scss';
@@ -11,6 +10,7 @@ import DarkModeSwitch from './components/DarkModeSwitch/DarkModeSwitch';
 import LanguageSwitch from './components/LanguageSwitch/LanguageSwitch';
 import config from '../../configs';
 import { NAVIGATION_TABS } from '../../utils/constants';
+import { useTranslation } from 'react-i18next';
 
 const cx = className.bind(styles);
 
@@ -18,6 +18,7 @@ function Header() {
   const lineRef = useRef<HTMLDivElement>(null);
   const [openMenu, setOpenMenu] = useState(false);
   const { pathname } = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const currentTabElement = document.querySelector(
@@ -42,23 +43,23 @@ function Header() {
         </Link>
 
         <div className={cx('navigation-list')}>
-          {NAVIGATION_TABS.map((item) => (
+          {NAVIGATION_TABS.map((item, index) => (
             <Link
               id={`navigation-item-${item.path.slice(1)}`}
               key={item.path}
               to={item.path}
               className={cx('navigation-item-link')}
             >
-              {item.name}
+              {t(`header.navigation_tabs.${index}`)}
             </Link>
           ))}
-          <div ref={lineRef} className={cx('line')}></div>
+          {/* <div ref={lineRef} className={cx('line')}></div> */}
         </div>
 
         <div className={cx('header-icon-list')}>
           <div className={cx('header-button')}>
             <LanguageSwitch />
-            <DarkModeSwitch />
+            <DarkModeSwitch id='header' />
           </div>
           <SocialIconList />
         </div>
@@ -70,22 +71,26 @@ function Header() {
           onClick={() => setOpenMenu(true)}
         />
         <div
-          className={cx('header-menu')}
+          className={`header-menu ${cx('header-menu')}`}
           style={{ top: openMenu ? '0px' : 'calc(-1 * 100vh)' }}
         >
           <div className={cx('menu-close')} onClick={() => setOpenMenu(false)}>
             &times;
           </div>
           <div className={cx('navigation-list-menu')}>
-            {NAVIGATION_TABS.map((item) => (
+            {NAVIGATION_TABS.map((item, index) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={cx('navigation-item-link')}
               >
-                {item.name}
+                {t(`header.navigation_tabs.${index}`)}
               </Link>
             ))}
+          </div>
+          <div className={cx('menu-header-button')}>
+            <LanguageSwitch />
+            <DarkModeSwitch id='menu-list' />
           </div>
         </div>
       </div>

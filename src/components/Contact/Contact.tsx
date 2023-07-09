@@ -3,15 +3,17 @@ import styles from './Contact.module.scss';
 import contactImage from '../../assets/contact/1.jpg';
 import { CONTACT_LIST } from '../../utils/constants';
 import { useWindowSize } from '../../hooks/useWindowSize';
+import { useTranslation } from 'react-i18next';
 
 const cx = classNames.bind(styles);
 
 function Contact() {
   const { width } = useWindowSize();
+  const { t } = useTranslation();
 
   return (
     <section className='section' id='contact'>
-      <h2 className='section-header'>Contact</h2>
+      <h2 className='section-header'>{t('contact.contact')}</h2>
       <div className={cx('contact-body')}>
         <div className={cx('contact-info')}>
           <div>

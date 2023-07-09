@@ -75,13 +75,16 @@ body a {
 
   & body,
   & header,
-  & .dropdown-menu {
-    background-color: #36454f;
+  & .dropdown-menu,
+  & .header-menu {
+    background-color: #36454f !important;
   }
 
   & footer,
-  & .dropdown-item:hover {
+  & .dropdown-item:hover,
+  & .dropdown-item:active {
     background-color: #4b5a65;
+    cursor: pointer !important;
   }
 
   & a,

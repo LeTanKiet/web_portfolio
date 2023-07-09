@@ -1,4 +1,3 @@
-'use client';
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
@@ -9,12 +8,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import { PRODUCT_LIST } from '../../utils/constants';
+import { useTranslation } from 'react-i18next';
 
 const cx = classNames.bind(styles);
 
 function Products() {
   const { width } = useWindowSize();
   const [slidesPerView, setSlidesPerView] = useState<number>(2);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (width < 640) {
@@ -26,7 +27,7 @@ function Products() {
 
   return (
     <section className='section' id='products'>
-      <h2 className={`section-header`}>Our products</h2>
+      <h2 className={`section-header`}>{t('product.header')}</h2>
       <Swiper
         spaceBetween={50}
         slidesPerView={slidesPerView}

@@ -1,0 +1,12 @@
+{
+  "home": "Home",
+  "contact": "Contact",
+  "about_us": "About Us",
+  "our_product": "Our Products",
+  "portfolio": "Porfolio",
+  "language": "Language",
+  "vietnamese": "Vietnamese",
+  "english": "English",
+  "darkmode": "Dark mode",
+  "navigation_tabs": ["Home","About Us","Porfolio"]
+}

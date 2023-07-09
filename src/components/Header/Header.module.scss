@@ -42,7 +42,7 @@
 .navigation-list {
   position: relative;
   display: flex;
-  gap: 120px;
+  gap: 60px;
   justify-content: space-between;
   margin: 0 200px;
 
@@ -135,4 +135,12 @@
       cursor: pointer;
     }
   }
+}
+
+.menu-header-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
 }

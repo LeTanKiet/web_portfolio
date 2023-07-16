@@ -4,22 +4,26 @@
   visibility: hidden;
 
   &:checked {
-    & + .label {
-      background: #242424;
+    &+.label {
+      background: #28343d;
 
       & .sun {
-        color: #7e7e7e;
+        color: #7e7e7e !important;
       }
 
       & .moon {
-        color: #fff;
+        color: #7e7e7e !important;
+
+        &>path {
+          fill: #525252 !important;
+        }
       }
     }
 
-    & + .label::after {
+    &+.label::after {
       left: 50px;
       transform: translateX(-100%);
-      background: linear-gradient(180deg, #777, #3a3a3a);
+      background: #dbdbdb;
     }
   }
 }
@@ -41,7 +45,7 @@
     position: absolute;
     top: 2px;
     left: 2px;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    background: #f9b75f;
     border-radius: 50%;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transition: 0.3s;

@@ -11,7 +11,7 @@ function HeroSection() {
   return (
     <section className={`section ${cx('hero-section')}`}>
       <h3 className={cx('slogan')}>{t('hero_section.slogan')}</h3>
-      <button className={`btn btn--rounded ${cx('hero-section-button')}`}>
+      <button className={`btn ${cx('hero-section-button')}`}>
         {t('hero_section.our_works')}
       </button>
     </section>

@@ -10,8 +10,12 @@
   margin: 0 auto;
   font-size: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 32px 24px;
+
+  @include mobile {
+    justify-content: space-between;
+  }
 }
 
 .navigation-list {
@@ -56,10 +60,4 @@
 
 .contact-description {
   font-size: 1rem;
-}
-
-.footer-icon-list {
-  @include mobile {
-    display: none;
-  }
 }

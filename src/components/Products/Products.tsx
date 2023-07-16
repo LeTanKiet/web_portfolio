@@ -9,6 +9,8 @@ import 'swiper/css/pagination';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import { PRODUCT_LIST } from '../../utils/constants';
 import { useTranslation } from 'react-i18next';
+import arrow_left from "../../assets/arrow-left.svg";
+import arrow_right from "../../assets/arrow-right.svg";
 
 const cx = classNames.bind(styles);
 
@@ -34,7 +36,11 @@ function Products() {
         pagination={{
           type: 'fraction',
         }}
-        navigation={true}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+          enabled: true,
+        }}
         modules={[Pagination, Navigation]}
       >
         {PRODUCT_LIST.map((product) => (
@@ -46,7 +52,7 @@ function Products() {
                   backgroundImage: `url(${product.thumbnail})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
-                  width: `${slidesPerView === 1 ? '600px' : '580px'}`,
+                  width: `${slidesPerView === 1 ? (width < 512 ? `${width - 32}px` : '480px') : '570px'}`,
                   height: `${slidesPerView === 1 ? '600px' : '600px'}`,
                 }}
               ></div>
@@ -59,8 +65,16 @@ function Products() {
             </div>
           </SwiperSlide>
         ))}
+        <div className={cx("slider-controller")}>
+          <div className={`swiper-button-prev ${cx("slider-arrow")}`}>
+            <img src={arrow_left} alt="arrow-left" className={cx("arrow-icon")} />
+          </div>
+          <div className={`swiper-button-next ${cx("slider-arrow")}`}>
+            <img src={arrow_right} alt="arrow-right" className={cx("arrow-icon")} />
+          </div>
+        </div>
       </Swiper>
-    </section>
+    </section >
   );
 }
 

@@ -6,6 +6,7 @@
   background-position: center;
   height: 80vh;
   position: relative;
+  border-radius: 8px;
 }
 
 .slogan {
@@ -32,11 +33,18 @@
   font-size: 1.2rem;
   background-color: #4b5a65;
   color: #fff;
+  border-radius: 8px;
 
   &:hover {
     background-color: #4b5a65;
     color: #fff;
     opacity: 0.8;
+  }
+
+  &:active {
+    background-color: #4b5a65 !important;
+    border-color: #4b5a65 !important;
+    opacity: 1;
   }
 
   @include mobile {

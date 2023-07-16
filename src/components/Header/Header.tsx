@@ -11,6 +11,7 @@ import LanguageSwitch from './components/LanguageSwitch/LanguageSwitch';
 import config from '../../configs';
 import { NAVIGATION_TABS } from '../../utils/constants';
 import { useTranslation } from 'react-i18next';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 const cx = className.bind(styles);
 
@@ -19,6 +20,7 @@ function Header() {
   const [openMenu, setOpenMenu] = useState(false);
   const { pathname } = useLocation();
   const { t } = useTranslation();
+  const { width } = useWindowSize()
 
   useEffect(() => {
     const currentTabElement = document.querySelector(
@@ -30,6 +32,12 @@ function Header() {
       lineRef.current.style.width = offsetWidth + 'px';
     }
   }, [pathname]);
+
+  useEffect(() => {
+    if (openMenu && width > 640) {
+      setOpenMenu(false);
+    }
+  }, [width, openMenu])
 
   return (
     <header className={cx('header')}>
@@ -83,6 +91,7 @@ function Header() {
                 key={item.path}
                 to={item.path}
                 className={cx('navigation-item-link')}
+                onClick={() => setOpenMenu(false)}
               >
                 {t(`header.navigation_tabs.${index}`)}
               </Link>

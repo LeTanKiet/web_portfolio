@@ -1,7 +1,5 @@
-import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
-import SocialIconList from '../SocialIconList/SocialIconList';
 import { Link } from 'react-router-dom';
 import { ADDRESS, NAVIGATION_TABS, PHONE_NUMBER } from '../../utils/constants';
 import { useTranslation } from 'react-i18next';
@@ -42,10 +40,6 @@ function Footer() {
               {ADDRESS}
             </Link>
           </div>
-        </div>
-
-        <div className={cx('footer-icon-list')}>
-          <SocialIconList />
         </div>
       </div>
     </footer>

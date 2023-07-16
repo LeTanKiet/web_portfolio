@@ -44,7 +44,7 @@ function Carousel(props) {
       >
         {props.images.map((image, index) => (
           <SwiperSlide key={index}>
-            <img src={image} alt="slide_image" className="slide-image" onClick={() => handleImageClick(image)}/>
+            <img src={image} alt="slide_image" className="slide-image" onClick={() => handleImageClick(image)} />
           </SwiperSlide>
         ))}
         <div className="slider-controller">
@@ -61,7 +61,7 @@ function Carousel(props) {
           <span className="close" onClick={() => setShowModal(false)}>
             &times;
           </span>
-          <img className="modal-content" src={selectedImage} alt='Modal'/>
+          <img className="modal-content" src={selectedImage} alt='Modal' />
         </div>
       )}
     </section>

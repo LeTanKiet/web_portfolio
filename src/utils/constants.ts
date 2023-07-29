@@ -1,8 +1,6 @@
 import config from '../configs';
 import { Product } from '../models/product';
-import {
-  faInstagram, faSquareFacebook, faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import addressIcon from '../assets/logo-address.svg';
 import cameraIcon from '../assets/logo-camerasvg.svg';
@@ -19,6 +17,9 @@ import slide_img_6 from '../assets/carousel_img/6.jpg';
 
 export const PHONE_NUMBER = '0938284212';
 export const ADDRESS = 'Ho Chi Minh City';
+export const EMAIL = 'shop@gmail.com';
+export const QR_CODE =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/640px-QR_code_for_mobile_English_Wikipedia.svg.png';
 
 export const NAVIGATION_TABS = [
   {
@@ -42,18 +43,8 @@ export const ICON_LIST = [
     icon: faInstagram,
   },
   {
-    name: 'Facebook',
-    href: '/',
-    icon: faSquareFacebook,
-  },
-  {
-    name: 'Youtube',
-    href: '/',
-    icon: faYoutube,
-  },
-  {
     name: 'Mail',
-    href: '/',
+    href: `${config.routes.about_us}#contact`,
     icon: faEnvelope,
   },
 ];
@@ -69,6 +60,15 @@ export const CONTACT_LIST = [
     description: 'Thời gian làm việc: 8:00 - 21:00| T2 - CN',
     icon: cameraIcon,
   },
+];
+
+export const HERO_SECTIONS = [
+  'https://images.unsplash.com/photo-1614104490393-c53a4157e9f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  'https://images.unsplash.com/photo-1614104490393-c53a4157e9f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  'https://images.unsplash.com/photo-1614104490393-c53a4157e9f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  'https://images.unsplash.com/photo-1614104490393-c53a4157e9f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  'https://images.unsplash.com/photo-1614104490393-c53a4157e9f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  'https://images.unsplash.com/photo-1614104490393-c53a4157e9f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
 ];
 
 export const PRODUCT_LIST: Product[] = [
@@ -155,3 +155,9 @@ export const LANGUAGE_LIST = [
     code: 'vi',
   },
 ];
+
+export const PORTFOLIO_IMAGES = Array(50).fill(
+  'https://images.unsplash.com/photo-1614104490393-c53a4157e9f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+);
+
+export const NUMBER_OF_IMAGES_IN_GALLERY = 12;

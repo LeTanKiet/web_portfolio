@@ -4,7 +4,11 @@
   "address": "Address: ",
   "mobile_number": "Mobile Number: ",
   "email": "Email: ",
-  "facebook": "Facebook: ",
+  "email_placeholder": "Enter your email",
   "instagram": "Instagram: ",
-  "youtube": "Youtube: "
-  }
+  "full_name": "Full Name: ",
+  "full_name_placeholder": "Enter your full name",
+  "message": "Message: ",
+  "message_placeholder": "Enter your message",
+  "submit": "Submit"
+}

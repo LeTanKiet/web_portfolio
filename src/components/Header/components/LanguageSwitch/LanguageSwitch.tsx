@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 function LanguageSwitch() {
   const { t } = useTranslation();
   const [language, setLanguage] = useState(() => {
-    const currentLanguage = localStorage.getItem('language') || 'en';
+    const currentLanguage = localStorage.getItem('language') || 'vi';
 
     i18n.changeLanguage(currentLanguage);
     return currentLanguage;
@@ -20,13 +20,13 @@ function LanguageSwitch() {
     <div className={`dropdown ${cx('dropdown')}`}>
       <button
         className={`btn btn-danger dropdown-toggle ${cx('dropdown-toggle')}`}
-        type='button'
-        data-bs-toggle='dropdown'
-        aria-expanded='false'
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
       >
         {LANGUAGE_LIST.find((l) => l.code === language)?.label}
       </button>
-      <ul className='dropdown-menu'>
+      <ul className="dropdown-menu">
         <li
           onClick={() => {
             i18n.changeLanguage('vi');
@@ -34,10 +34,7 @@ function LanguageSwitch() {
             localStorage.setItem('language', 'vi');
           }}
         >
-          <span
-            className={`dropdown-item ${language === 'vi' ? 'active' : ''}`}
-            style={{ cursor: 'pointer' }}
-          >
+          <span className={`dropdown-item ${language === 'vi' ? 'active' : ''}`} style={{ cursor: 'pointer' }}>
             {t('header.vietnamese')}
           </span>
         </li>
@@ -48,10 +45,7 @@ function LanguageSwitch() {
             localStorage.setItem('language', 'en');
           }}
         >
-          <span
-            className={`dropdown-item ${language === 'en' ? 'active' : ''}`}
-            style={{ cursor: 'pointer' }}
-          >
+          <span className={`dropdown-item ${language === 'en' ? 'active' : ''}`} style={{ cursor: 'pointer' }}>
             {t('header.english')}
           </span>
         </li>

@@ -1,10 +1,14 @@
 {
   "contact": "Liên hệ",
   "studio_name": "Tên Studio: ",
-  "address": "Địa chỉ: ",
+  "Email": "Email: ",
   "mobile_number": "Số điện thoại: ",
   "email": "Email: ",
-  "facebook": "Facebook: ",
+  "email_placeholder": "Nhập email",
   "instagram": "Instagram: ",
-  "youtube": "Youtube: "
-  }
+  "full_name": "Họ tên: ",
+  "full_name_placeholder": "Nhập họ tên",
+  "message": "Tin nhắn: ",
+  "message_placeholder": "Nhập tin nhắn",
+  "submit": "Gửi"
+}

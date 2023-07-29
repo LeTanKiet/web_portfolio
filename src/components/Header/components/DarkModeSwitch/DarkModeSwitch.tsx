@@ -31,7 +31,7 @@ function DarkModeSwitch({ id }: Props) {
       <input
         ref={inputRef}
         className={cx('input')}
-        type='checkbox'
+        type="checkbox"
         id={`darkmode-toggle-${id}`}
         onChange={() => {
           setIsChecked(!isChecked);

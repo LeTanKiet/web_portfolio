@@ -49,3 +49,12 @@ export const useOnClickOutside = (ref: any, handler: any, exceptionRef?: any) =>
     };
   }, [ref, handler, exceptionRef]);
 };
+
+export const useOnKeyDown = (onKeyDownHandler: any) => {
+  useEffect(() => {
+    document.addEventListener('keydown', onKeyDownHandler);
+    return () => {
+      document.removeEventListener('keydown', onKeyDownHandler);
+    };
+  }, [onKeyDownHandler]);
+};

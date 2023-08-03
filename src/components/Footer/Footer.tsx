@@ -23,15 +23,11 @@ function Footer() {
         <div className={cx('contact')}>
           <div className={cx('contact-phone')}>
             <h6 className={cx('contact-label')}>{t('footer.call_us')}</h6>
-            <a className={cx('contact-description')} href={`tel:${PHONE_NUMBER}`}>
-              {PHONE_NUMBER}
-            </a>
+            <span className={cx('contact-description')}>{PHONE_NUMBER}</span>
           </div>
           <div className={cx('contact-address')}>
             <h6 className={cx('contact-label')}>{t('footer.email')}</h6>
-            <a href={`mailto:${EMAIL}`} className={cx('contact-description')}>
-              {EMAIL}
-            </a>
+            <span className={cx('contact-description')}>{EMAIL}</span>
           </div>
         </div>
       </div>

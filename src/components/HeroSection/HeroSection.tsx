@@ -23,17 +23,19 @@ function HeroSection() {
         autoplay={{
           delay: 5000,
           stopOnLastSlide: false,
+          disableOnInteraction: false,
         }}
         modules={[Navigation, Autoplay]}
       >
         {HERO_SECTIONS.map((section, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} style={{ borderRadius: 8 }}>
             <div
               style={{
                 backgroundImage: `url(${section})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 height: 800,
+                borderRadius: 8,
               }}
             ></div>
           </SwiperSlide>

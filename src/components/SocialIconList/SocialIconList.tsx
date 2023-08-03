@@ -10,14 +10,19 @@ const cx = classNames.bind(styles);
 function SocialIconList() {
   return (
     <div className={cx('social-icon-list')}>
-      {ICON_LIST.map((icon) => (
-        <Link to={icon.href} key={icon.name}>
-          <FontAwesomeIcon
-            className={cx('social-icon-item')}
-            icon={icon.icon}
-          />
-        </Link>
-      ))}
+      {ICON_LIST.map((icon) =>
+        icon.icon ? (
+          <Link to={icon.href} key={icon.name}>
+            <FontAwesomeIcon className={cx('social-icon-item')} icon={icon.icon} />
+          </Link>
+        ) : (
+          <Link to={icon.href} key={icon.name}>
+            <div className={cx('social-icon-item')}>
+              <img src={icon.logo} alt="" />
+            </div>
+          </Link>
+        ),
+      )}
     </div>
   );
 }

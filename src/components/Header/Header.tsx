@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import className from 'classnames/bind';
 import styles from './Header.module.scss';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logoStudio from '../../assets/logo-studio.svg';
 import SocialIconList from '../SocialIconList/SocialIconList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,8 +19,17 @@ function Header() {
   const lineRef = useRef<HTMLDivElement>(null);
   const [openMenu, setOpenMenu] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const { width } = useWindowSize();
+
+  const handleClickLogo = () => {
+    navigate(config.routes.home);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
     const currentTabElement = document.querySelector(`#navigation-item-${pathname.slice(1)}`);
@@ -62,11 +71,11 @@ function Header() {
           </div>
           <div className={cx('menu-header-button')}>
             <SocialIconList />
-            <LanguageSwitch />
+            <DarkModeSwitch id="header-menu" />
           </div>
         </div>
 
-        <Link to={config.routes.home} className={cx('logo')}>
+        <Link to={config.routes.home} className={cx('logo')} onClick={handleClickLogo}>
           <img className={cx('logo-image')} src={logoStudio} alt="Studio Name" />
         </Link>
 
@@ -93,7 +102,7 @@ function Header() {
         </div>
 
         <div className={cx('dark-mode-mobile')}>
-          <DarkModeSwitch id="header-mobile" />
+          <LanguageSwitch />
         </div>
       </div>
     </header>

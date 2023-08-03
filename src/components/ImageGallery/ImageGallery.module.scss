@@ -62,7 +62,7 @@
   z-index: 99;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,6 +70,8 @@
   .body {
     width: 80%;
     animation: zoomIn 0.3s ease-in-out;
+    border-radius: 8px;
+    overflow: hidden;
 
     .modal-image {
       width: 100%;
@@ -78,11 +80,40 @@
       border-radius: 4px;
     }
   }
+
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 40px;
+    right: 80px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+
+    @include mobile {
+      top: 30px;
+      right: 20px;
+    }
+
+    &:hover,
+    &:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
 }
 
 .product-thumbnail {
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 8px;
+  width: 100%;
+  height: 800px;
+
+  @include mobile {
+    height: min(600px, calc(100vh - 200px));
+  }
 }
 
 .arrow-icon {
@@ -120,12 +151,16 @@
 
 .slider-controller {
   position: absolute;
-  top: calc(300px - 25px);
+  top: calc(400px - 25px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 50px;
+
+  @include mobile {
+    top: min(calc(300px - 25px), calc(calc(calc(100vh - 200px) / 2) - 25px));
+  }
 }
 
 .slider-controller .slider-arrow::after {

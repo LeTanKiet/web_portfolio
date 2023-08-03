@@ -2,8 +2,7 @@ import config from '../configs';
 import { Product } from '../models/product';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import addressIcon from '../assets/logo-address.svg';
-import cameraIcon from '../assets/logo-camerasvg.svg';
+import zaloIcon from '../assets/logo-zalo.svg';
 import product1 from '../assets/products/1.jpg';
 import product2 from '../assets/products/2.jpg';
 import product3 from '../assets/products/3.jpg';
@@ -47,18 +46,10 @@ export const ICON_LIST = [
     href: `${config.routes.about_us}#contact`,
     icon: faEnvelope,
   },
-];
-
-export const CONTACT_LIST = [
   {
-    label: 'Address',
-    description: '78 Nguyễn Văn Cừ, Quận 5, Ho Chi Minh City',
-    icon: addressIcon,
-  },
-  {
-    label: 'Time Work',
-    description: 'Thời gian làm việc: 8:00 - 21:00| T2 - CN',
-    icon: cameraIcon,
+    name: 'Zalo',
+    href: '/',
+    logo: zaloIcon,
   },
 ];
 

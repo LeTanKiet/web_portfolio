@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import arrow_left from '../../assets/arrow-left.svg';
 import arrow_right from '../../assets/arrow-right.svg';
-import { useOnClickOutside } from '../../hooks/useWindowSize';
+import { useOnKeyDown } from '../../hooks/useWindowSize';
 
 const cx = classNames.bind(styles);
 
@@ -25,14 +25,33 @@ const ImageGallery = ({ title, images }: Props) => {
   const [openModal, setOpenModal] = useState(false);
   const [initialSlideIndex, setInitialSlideIndex] = useState(0);
   const bodyRef = useRef<HTMLDivElement>(null);
-
-  useOnClickOutside(bodyRef, () => {
-    setOpenModal(false);
-  });
+  const arrowLeftRef = useRef<HTMLDivElement>(null);
+  const arrowRightRef = useRef<HTMLDivElement>(null);
 
   const handleSwiperInit = (swiper: any) => {
     swiper.slideTo(initialSlideIndex);
   };
+
+  const handleKeyDown = (e: any) => {
+    switch (e.key) {
+      case 'ArrowLeft':
+        if (arrowLeftRef.current && openModal) {
+          arrowLeftRef.current.click();
+        }
+        break;
+      case 'ArrowRight':
+        if (arrowRightRef.current && openModal) {
+          arrowRightRef.current.click();
+        }
+        break;
+      case 'Escape':
+        setOpenModal(false);
+        break;
+      default:
+        break;
+    }
+  };
+  useOnKeyDown(handleKeyDown);
 
   return (
     <section className="section">
@@ -62,6 +81,9 @@ const ImageGallery = ({ title, images }: Props) => {
 
       {openModal && (
         <div className={cx('modal')}>
+          <span className={cx('close')} onClick={() => setOpenModal(false)}>
+            &times;
+          </span>
           <div className={cx('body')} ref={bodyRef}>
             <Swiper
               slidesPerView={1}
@@ -82,18 +104,16 @@ const ImageGallery = ({ title, images }: Props) => {
                         backgroundImage: `url(${image})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        width: '100%',
-                        height: '600px',
                       }}
                     ></div>
                   </div>
                 </SwiperSlide>
               ))}
               <div className={cx('slider-controller')}>
-                <div className={`swiper-button-prev ${cx('slider-arrow')}`}>
+                <div className={`swiper-button-prev ${cx('slider-arrow')}`} ref={arrowLeftRef}>
                   <img src={arrow_left} alt="arrow-left" className={cx('arrow-icon')} />
                 </div>
-                <div className={`swiper-button-next ${cx('slider-arrow')}`}>
+                <div className={`swiper-button-next ${cx('slider-arrow')}`} ref={arrowRightRef}>
                   <img src={arrow_right} alt="arrow-right" className={cx('arrow-icon')} />
                 </div>
               </div>
